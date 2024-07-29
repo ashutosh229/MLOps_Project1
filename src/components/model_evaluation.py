@@ -29,8 +29,8 @@ class ModelEvaluation:
             model_path=os.path.join("artifacts","model.pkl")
             model=load_object(model_path)
             
-            mlflow.set_registry_uri("")
-            tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
+            #mlflow.set_registry_uri("")
+            #tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
             
             with mlflow.start_run():
                 prediction = model.predict(X_test)
@@ -40,10 +40,10 @@ class ModelEvaluation:
                 mlflow.log_metric("mae", mae)
                 mlflow.log_metric("r2", r2)
                 
-                if tracking_url_type_store!="file":
-                    mlflow.sklearn.log_model(model,"model",registered_model_name="ml-model")
-                else:
-                    mlflow.sklearn.log_model(model,"model")
+                # if tracking_url_type_store!="file":
+                #     mlflow.sklearn.log_model(model,"model",registered_model_name="ml-model")
+                # else:
+                #     mlflow.sklearn.log_model(model,"model")
         except Exception as e:
             logging.info("Exception occured during the model evaluation")
             raise customexception(e,sys)
