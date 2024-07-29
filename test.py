@@ -1,11 +1,2 @@
-from src.logger.logger import logging
-
-logging.info("this is myb testing")
-
-
-logging.info(" this my second tesgting")
-logging.info(" this my second tesgting")
-
-logging.info(" this my second tesgting")
-logging.info(" this my second tesgting")
-logging.info(" this my second tesgting")
+#issue is there in training file
+#evaluation file ko kaise padhna hain yeh batana hain 

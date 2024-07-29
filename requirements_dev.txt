@@ -6,6 +6,7 @@ flask
 mlflow 
 dvc
 ipykernel
+xgboost
 
 # dev requirements - 
 
