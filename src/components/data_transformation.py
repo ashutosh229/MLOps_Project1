@@ -90,18 +90,15 @@ class DataTransformation:
                 obj=preprocessor
             )
             
-            arrays = (train_arr,test_arr)
+            logging.info("Data transformation has finished")
             
-            with open("artifacts/arrays.pkl","wb") as f:
-                pickle.dump(arrays,f)
-                
-            logging.info("Data transformation finished")
+            return (
+                train_arr,
+                test_arr
+            )
             
         except Exception as e:
             logging.info("Error occured during the data transformation process")
             raise customexception(e,sys)
-        
-if __name__ == "__main__":
-    obj = DataTransformation()
-    obj.initializeDataTransformation("artifacts/train_data.csv","artifacts/test_data.csv")
+
            

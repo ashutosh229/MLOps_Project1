@@ -5,7 +5,6 @@ from src.logger.logger import logging
 import os
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
 from src.utils.utils import evaluate_model, save_object
-import pickle
 
 @dataclass
 class ModelTrainerConfig:
@@ -44,8 +43,4 @@ class ModelTrainer:
             logging.info("Error occurred during model training")
             raise customexception(e, sys)
 
-if __name__ == "__main__":
-    obj = ModelTrainer()
-    with open('artifacts/arrays.pkl', 'rb') as f:
-        train_arr, test_arr = pickle.load(f)
-    obj.initiateModelTraining(train_arr, test_arr)
+

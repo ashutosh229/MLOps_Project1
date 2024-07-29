@@ -41,7 +41,5 @@ class DataIngestion:
             logging.info("Error occured during data ingestion")
             raise customexception(e,sys)
         
-if __name__=="__main__":
-    obj = DataIngestion()
-    obj.initializeDataIngestion()
+
         
